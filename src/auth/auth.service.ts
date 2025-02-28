@@ -47,7 +47,16 @@ export class AuthService {
     return user.reload();
   }
 
-  validatePassword(password: string, userPassword: string): Promise<boolean> {
-    return bcrypt.compare(password, userPassword);
+  async validatePassword(password: string, userPassword: string): Promise<boolean> {
+    if (!password || !userPassword) {
+      return false;
+    }
+    
+    try {
+      return await bcrypt.compare(password, userPassword);
+    } catch (error) {
+      console.error('Password validation error:', error.message);
+      return false;
+    }
   }
 }

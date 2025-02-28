@@ -3,8 +3,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Ed",
-  "email": "guilherme@souza.com",
+  "name": "Eduardo",
+  "email": "eduardo@galvao.com",
   "password": "password"
 }
 
@@ -13,4 +13,4 @@ Content-Type: application/json
 GET http://localhost:3000/users/me
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJndWlsaGVybWVAc291emEuY29tIiwiaWF0IjoxNzM4MDAzNTkyLCJleHAiOjE3MzgwODk5OTJ9.yWVQJzuCLLKTwIytq8Z472g9VhbtXU66NaxbQ5cP84k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJndWlsaGVybWVAc291emEuY29tIiwiaWF0IjoxNzM5ODc5MDI4LCJleHAiOjE3Mzk5NjU0Mjh9.LzxRskmaf-Favzvkxp1bgyrV6S-YKiNnP730PeXEAIQ

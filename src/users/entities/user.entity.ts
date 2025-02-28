@@ -4,8 +4,10 @@ import {
   Column,
   BeforeUpdate,
   BeforeCreate,
+  HasMany,
 } from 'sequelize-typescript';
 import * as bcrypt from 'bcrypt';
+import { Todo } from '../../todos/entities/todo.entity';
 
 @Table({
   tableName: 'users',
@@ -23,6 +25,9 @@ export class User extends Model {
 
   @Column
   token: string;
+
+  @HasMany(() => Todo)
+  todos: Todo[];
 
   @BeforeUpdate
   @BeforeCreate

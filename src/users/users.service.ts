@@ -7,11 +7,13 @@ import { CreateUserDto } from './dto/create-user.dto';
 export class UsersService {
   constructor(@InjectModel(User) private userModel: typeof User) {}
 
-  async create(dto: CreateUserDto) {
-    await this.userModel.create({
+  async create(dto: CreateUserDto): Promise<User> {
+    const user = await this.userModel.create({
       name: dto.name,
       email: dto.email,
       password: dto.password,
     });
+    
+    return user;
   }
 }

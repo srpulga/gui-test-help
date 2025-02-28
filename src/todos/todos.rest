@@ -1,0 +1,53 @@
+# Fetch all todos (public route)
+GET http://localhost:3000/todos
+Accept: application/json
+Content-Type: application/json
+
+###
+
+# Fetch a specific todo (public route)
+GET http://localhost:3000/todos/1
+Accept: application/json
+Content-Type: application/json
+
+###
+
+# Fetch todos for the authenticated user
+GET http://localhost:3000/todos/user/me
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+###
+
+# Create a new todo (requires authentication)
+POST http://localhost:3000/todos
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlZHVhcmRvQGdhbHZhby5jb20iLCJpYXQiOjE3NDA3NjQxNDcsImV4cCI6MTc0MDg1MDU0N30.zcc0fOzS_Nk3l118NoYGJbvuc74THCKHoxVTc2JcrUY
+
+{
+  "title": "Buy groceries",
+  "imageLink": "https://images.unsplash.com/photo-1556741533-f6acd6474059?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+}
+
+###
+
+# Update a todo (requires authentication and ownership)
+PATCH http://localhost:3000/todos/1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+{
+  "title": "Buy groceries and cook dinner",
+  "imageLink": "https://example.com/groceries-updated.jpg"
+}
+
+###
+
+# Delete a todo (requires authentication and ownership)
+DELETE http://localhost:3000/todos/1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN_HERE 

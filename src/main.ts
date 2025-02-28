@@ -13,6 +13,12 @@ async function bootstrap() {
     }),
   );
 
+  app.enableCors({
+    origin: '*',
+    methods: '*',
+    allowedHeaders: '*',
+  });
+
   await app.listen(3000, '0.0.0.0');
 }
 

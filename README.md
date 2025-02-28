@@ -97,3 +97,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+
+ create database sequelize; c
+ create user root with encrypted password 'root';
+ grant all privileges on database sequelize to root;
+ alter user root with superuser;
